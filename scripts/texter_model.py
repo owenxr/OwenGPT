@@ -15,7 +15,7 @@ with open('params/API_KEY.txt', 'r') as api_key_file:
     API_KEY = api_key_file.readline()
 
 tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
-model = GPT2LMHeadModel.from_pretrained("owenxr/TextModel", token=API_KEY)
+model = GPT2LMHeadModel.from_pretrained("MODEL_NAME", token=API_KEY)
 
 
 def pre_text_gen(pretext):
@@ -57,8 +57,8 @@ def gen_responses(pretext):
             repetition_penalty=0.8,
             do_sample=True,
             top_k=75,
-            top_p=0.5,
-            temperature=0.7
+            top_p=0.6,
+            temperature=0.8
         )
 
         # pretty print last ouput tokens from bot
