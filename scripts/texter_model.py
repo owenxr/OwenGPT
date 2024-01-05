@@ -15,7 +15,7 @@ with open('params/API_KEY.txt', 'r') as api_key_file:
     API_KEY = api_key_file.readline()
 
 tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
-model = GPT2LMHeadModel.from_pretrained("MODEL_NAME", token=API_KEY)
+model = GPT2LMHeadModel.from_pretrained("owenxr/TextModel", token=API_KEY)
 
 
 def pre_text_gen(pretext):
@@ -48,9 +48,10 @@ def gen_responses(pretext):
 
         step += 1
 
-        # generated a response while limiting the total chat history to 1000 tokens,
+        # generated a response while limiting the total chat history to 1000 tokens
+        # parameters to play around with
         chat_history_ids = model.generate(
-            bot_input_ids, max_new_tokens=500,
+            bot_input_ids, max_new_tokens=1000,
             min_new_tokens=6,
             pad_token_id=tokenizer.eos_token_id,
             no_repeat_ngram_size=3,

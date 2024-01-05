@@ -24,7 +24,7 @@ for c in test_contacts:
     pretext = message_reader.read_texts(c)
     print(pretext)
     responses = texter_model.gen_responses(pretext)
-#    print(responses)
+    print(responses)
     for response in responses:
         if test_contacts[c] == 'SMS':
             message_sender.send_sms(c, response)

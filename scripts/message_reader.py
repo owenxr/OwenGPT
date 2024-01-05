@@ -37,7 +37,7 @@ def read_imessages_for_number(phone_number):
     try:
         cursor.execute(query, (phone_number,))
         messages = cursor.fetchall()
-        message_lst = [message[0] for message in messages][::-1]
+        message_lst = [message[0] for message in messages]
         return message_lst
     except Exception as e:
         print(f"An error occurred: {e}")
