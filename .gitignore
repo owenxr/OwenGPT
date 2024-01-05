@@ -1,0 +1,11 @@
+.venv
+cached
+runs
+scripts/__pycache___
+text_messages
+texts_txt
+params/
+.DS_STORE
+
+contacts.csv
+example_text.txt
