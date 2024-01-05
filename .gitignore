@@ -1,7 +1,7 @@
 .venv
 cached
 runs
-scripts/__pycache___
+scripts/__pycache__
 text_messages
 texts_txt
 params/
